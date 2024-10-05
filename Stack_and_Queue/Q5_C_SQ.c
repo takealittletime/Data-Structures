@@ -109,7 +109,14 @@ int main()
 
 void recursiveReverse(Queue *q)
 {
-/* add your code here */
+	// base case
+	if (q->ll.size == 1)
+	{
+		return;
+	}
+	int tmp = dequeue(q);
+	recursiveReverse(q);
+	enqueue(q,tmp);
 }
 
 //////////////////////////////////////////////////////////////////
