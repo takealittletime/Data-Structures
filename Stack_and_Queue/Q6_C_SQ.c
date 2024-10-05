@@ -111,7 +111,11 @@ int main()
 
 void removeUntil(Stack *s, int value)
 {
-/* add your code here */
+	// Repeat until the stack is not empty and the top value of the stack differs from the given value
+    while (!isEmptyStack(s) && peek(s) != value) {
+        pop(s);
+    }
+
 }
 
 //////////////////////////////////////////////////////////////////////////////////

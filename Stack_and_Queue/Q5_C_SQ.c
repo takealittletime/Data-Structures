@@ -114,8 +114,11 @@ void recursiveReverse(Queue *q)
 	{
 		return;
 	}
+	// get dequeue value
 	int tmp = dequeue(q);
+	// recursive call
 	recursiveReverse(q);
+	// enqueue tmp value
 	enqueue(q,tmp);
 }
 
