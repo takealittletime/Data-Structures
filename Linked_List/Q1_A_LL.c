@@ -94,20 +94,17 @@ int insertSortedLL(LinkedList* ll, int item)
 	ListNode* tmp = ll->head;
 	int index = 0;
 
-	// 연결 리스트가 비어있는 경우/item이 현재 값보다 작은 경우 바로 추가하고 인덱스 리턴
 	if (tmp == NULL || item < tmp->item)
 	{
 		insertNode(ll, index, item);
 		return index;
 	}
 
-	// 첫 값부터 중복인 경우
 	if (tmp->item == item)
 	{
 		return -1;
 	}
 
-	// next-> item보다 현재 item 값이 작다면 계속해서 다음 노드로
 	while (tmp->next != NULL && tmp->next->item < item)
 	{
 		index++;
@@ -115,14 +112,11 @@ int insertSortedLL(LinkedList* ll, int item)
 	}
 	index++;
 
-
-	// 중복된 값인 경우 -1
 	if (tmp->next != NULL && tmp->next->item == item)
 	{
 		return -1;
 	}
 
-	// 위의 조건들에 해당하지 않았다면, 노드 삽입.
 	insertNode(ll, index, item);
 	return index;
 }
@@ -193,7 +187,6 @@ int insertNode(LinkedList* ll, int index, int value) {
 		return -1;
 
 	// If empty list or inserting first node, need to update head pointer
-	// 연결 리스트가 비어있는 경우 첫 노드 삽입
 	if (ll->head == NULL || index == 0) {
 		cur = ll->head;
 		ll->head = malloc(sizeof(ListNode));
@@ -217,7 +210,6 @@ int insertNode(LinkedList* ll, int index, int value) {
 
 	return -1;
 }
-
 
 int removeNode(LinkedList* ll, int index) {
 
