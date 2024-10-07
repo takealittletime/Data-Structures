@@ -106,7 +106,7 @@ void levelOrderTraversal(BSTNode* root)
 	{
 		// pop queue and print data
 		BSTNode* data = dequeue(&(q.head), &(q.tail));
-		printf("%d\n", data->item);
+		printf("%d ", data->item);
 		// enqeue their left, right child
 		if (data->left != NULL)
 			enqueue(&(q.head), &(q.tail), data->left);
