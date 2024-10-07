@@ -105,7 +105,19 @@ int main()
 
 void printSmallerValues(BTNode *node, int m)
 {
-	/* add your code here */
+    // if node is vacant, just return
+    if (node == NULL)
+        return;
+
+    // if node is smaller than m, print item
+	if (node->item < m)
+    {
+        printf("%d ",node->item);
+    }
+
+    // recursive call
+    printSmallerValues(node->left, m);
+    printSmallerValues(node->right, m);
 }
 
 //////////////////////////////////////////////////////////////////////////////////
