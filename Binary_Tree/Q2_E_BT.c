@@ -95,10 +95,23 @@ int main()
 //////////////////////////////////////////////////////////////////////////////////
 
 int maxHeight(BTNode *node)
-
 {
-    /* add your code here */
+    // base case (if tree is vacant, return 0)
+    if (node == NULL)
+        return 0;
+    
+    // recursive call (for their left child, right child)
+    int left = maxHeight(node->left);
+    int right = maxHeight(node->right);
+
+    // return result
+    if (left > right)
+        return left;
+    
+    else
+        return right;
 }
+
 
 ///////////////////////////////////////////////////////////////////////////////////
 
