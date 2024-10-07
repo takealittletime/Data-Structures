@@ -102,13 +102,16 @@ int main()
 
 int smallestValue(BTNode *node)
 {
+    // if node has no child, return item
     if (node->left == NULL && node->right == NULL)
     {
         return node->item;
     }
 
+    // recursive call for each childs
     int left = smallestValue(node->left);
     int right = smallestValue(node->right);
+    // return smaller value
     return (left > right? right:left);
 }
 
